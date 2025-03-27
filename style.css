@@ -1,0 +1,14 @@
+body{
+    background-image: url(img/bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+}
+::selection {
+    background: #10b981;
+    color: white;
+}
+/* car */
+
