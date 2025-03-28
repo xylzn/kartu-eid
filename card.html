@@ -1,0 +1,48 @@
+<script>
+    const envelopeContainer = document.querySelector('.envelope-container');
+    const letter = document.querySelector('.letter');
+    let isOpened = false;
+
+    // Opsi animasi
+    const animationOptions = {
+        duration: 1500,
+        easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        fill: 'forwards'
+    };
+
+    envelopeContainer.addEventListener('click', () => {
+        if (!isOpened) {
+            // Animasi buka
+            envelopeContainer.classList.add('opened');
+            letter.animate([
+                { 
+                    transform: 'translateY(200%) rotateX(90deg) rotateZ(-20deg) scale(0.5)',
+                    opacity: 0,
+                    filter: 'blur(20px)'
+                },
+                { 
+                    transform: 'translateY(0) rotateX(0) rotateZ(0) scale(1)',
+                    opacity: 1,
+                    filter: 'blur(0)'
+                }
+            ], animationOptions);
+            isOpened = true;
+        } else {
+            // Animasi tutup
+            envelopeContainer.classList.remove('opened');
+            letter.animate([
+                { 
+                    transform: 'translateY(0) rotateX(0) rotateZ(0) scale(1)',
+                    opacity: 1,
+                    filter: 'blur(0)'
+                },
+                { 
+                    transform: 'translateY(200%) rotateX(90deg) rotateZ(-20deg) scale(0.5)',
+                    opacity: 0,
+                    filter: 'blur(20px)'
+                }
+            ], animationOptions);
+            isOpened = false;
+        }
+    });
+</script> 
