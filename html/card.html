@@ -411,7 +411,7 @@
                 <h2 class="text-3xl font-black text-emerald-600 mb-4 tracking-wide drop-shadow-md">
                     Selamat Lebaran
                 </h2>
-                <p id="namaUser" class="text-2xl text-emerald-500 mb-4 font-bold animate-pulse"></p>
+                <p id="pengguna" class="text-2xl text-emerald-500 mb-4 font-bold animate-pulse"></p>
 
                 <div class="border-b-2 border-emerald-200 my-4"></div>
 
@@ -431,17 +431,19 @@
                 </div>
                 <div id="seabankInfo"
                     class="opacity-0 invisible w-full absolute top-[-17vh] left-1/2 transform -translate-x-1/2 bg-emerald-500/90 text-white p-4 rounded-lg shadow-xl transition-all duration-300 ease-in-out">
-                    <div class="flex font-bold text-center">
+                    <div class="flex font-bold justify-center">
 
                         <p>
-                            THR Nya Dong Ka &nbsp;
-                        <span id="namaUser"></span>🤫🧏‍♂️
+                            THR Nya Dong Kak
+                        
+                        <span id="userdua"></span>
+                        🤫🧏‍♂️
                         </p>
                     </div>
-                    <p class="text-center tracking-wider">
-                        SeaBank - 90144137157 a/n Dedi Rialdi
+                    <p class="text-center tracking-wider text-sm">
+                        SeaBank - 901441137157 a/n Dedi Rialdi
                     </p>
-                    <small class="block text-center text-xs opacity-70">(Sekedar bercanda, ya! 🤭)</small>
+                    <small class="block text-center text-xs opacity-70">(XIXIXIXIXI 🤭)</small>
                 </div>
             </div>
         </div>
@@ -475,9 +477,13 @@
         const name = urlParams.get('name');
 
         // Render nama di kartu
-        const namaElement = document.getElementById('namaUser');
+        const namaElement = document.getElementById('pengguna');
         if (namaElement) {
             namaElement.textContent = name || 'Sahabat';
+        }
+        const namadua = document.getElementById('userdua');
+        if (namadua){
+            namadua.textContent = name || 'Friend'
         }
 
         const envelope = document.querySelector('.envelope');
