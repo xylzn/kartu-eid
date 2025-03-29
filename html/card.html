@@ -383,6 +383,19 @@
     </style>
 </head>
 
+<!-- Audio Background -->
+<audio id="backgroundMusic" loop>
+    <source src="/music/lebaran.mp3" type="audio/mpeg">
+
+</audio>
+<!-- loader -->
+<div id="loader" class="fixed inset-0 z-50 flex items-center justify-center bg-green-500">
+    <div class="w-56 h-56 mx-auto mb-4 bg-white/30 rounded-full flex items-center justify-center">
+        <img src="/img/miss-you.gif" alt="Loading" class="w-52 h-52 rounded-full animate-pulse object-cover">
+    </div>
+</div>
+<!-- loader -->
+
 <body class=" min-h-screen flex items-center justify-center p-4">
     <div class="envelope-container">
         <div class="envelope ">
@@ -418,11 +431,15 @@
                 </div>
                 <div id="seabankInfo"
                     class="opacity-0 invisible w-full absolute top-[-17vh] left-1/2 transform -translate-x-1/2 bg-emerald-500/90 text-white p-4 rounded-lg shadow-xl transition-all duration-300 ease-in-out">
-                    <p class="font-bold text-center">
-                        Mau THR tambahan? 😏
-                    </p>
+                    <div class="flex font-bold text-center">
+
+                        <p>
+                            THR Nya Dong Ka &nbsp;
+                        <span id="namaUser"></span>🤫🧏‍♂️
+                        </p>
+                    </div>
                     <p class="text-center tracking-wider">
-                        SeAbank: 0812-3456-7890
+                        SeaBank - 90144137157 a/n Dedi Rialdi
                     </p>
                     <small class="block text-center text-xs opacity-70">(Sekedar bercanda, ya! 🤭)</small>
                 </div>
@@ -533,6 +550,25 @@
                 letterThr.style.opacity = '1';
                 letterThr.style.top = '-100px';
             }
+        });
+        // loader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.classList.add('opacity-0');
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        });
+
+
+        // Fungsi untuk memulai musik
+        const backgroundMusic = document.getElementById('backgroundMusic');
+
+
+        document.body.addEventListener('click', () => {
+            backgroundMusic.play().catch(error => {
+                console.log('Autoplay was prevented:', error);
+            });
         });
     </script>
 </body>

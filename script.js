@@ -60,3 +60,14 @@ window.addEventListener('load', () => {
         loader.style.display = 'none';
     }, 500);
 });
+
+
+ // Fungsi untuk memulai musik
+ const backgroundMusic = document.getElementById('backgroundMusic');
+
+
+ document.body.addEventListener('click', () => {
+     backgroundMusic.play().catch(error => {
+         console.log('Autoplay was prevented:', error);
+     });
+ });
